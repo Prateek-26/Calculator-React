@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import BackspaceIcon from '@mui/icons-material/Backspace';
 
 const nums = [7,8,9,4,5,6,1,2,3];
 function App() {
@@ -43,11 +45,16 @@ function App() {
     setCalc(value);
   }
 
+  function deleteComplete(){
+    setCalc("");
+    setResult("");
+  }
 
   return (
     <div className="App">
       <div className="calculator">
         <div className="display">
+        <DeleteForeverIcon onClick={deleteComplete} className="delete-icon"/>
           {result ? <span>({result})</span> : '' } &nbsp;
           {calc || '0'}
         </div>
@@ -56,7 +63,7 @@ function App() {
           <button onClick={()=>updateCalc('*')}>*</button>
           <button onClick={()=>updateCalc('+')}>+</button>
           <button onClick={()=>updateCalc('-')}>-</button>
-          <button onClick={deleteLast}>DEL</button>
+          <button onClick={deleteLast}><BackspaceIcon /></button>
           </div>
           <div className="digits">
             {nums.map((element)=>(

@@ -13,7 +13,9 @@
 }
 
 body{
-  background-color: var(--light);
+  background-color: #949393;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .App{
@@ -40,6 +42,12 @@ body{
   color: var(--light);
   font-size: 24px;
   font-weight: 300;
+}
+
+.delete-icon{
+  float: left;
+  color: var(--primary);
+  cursor: pointer;
 }
 
 .display span{
@@ -81,4 +89,8 @@ button:hover{
   flex: 1 1 33.333%;
   max-width: 33.335%;
   background-color: var(--dark);
+}
+
+.digits button:hover{
+  color: var(--primary);
 }
